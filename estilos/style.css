@@ -21,61 +21,94 @@
 }
 
 */
+:root {
+   --fundo-principal: #f5f5f5;
+  --texto: #222222;
+  --texto-inverso: #ffffff;
+  --destaque: #0077ff;
+  --destaque-inverso: #66bbff;
+  --fundo-card: #ffffff;
+}
 
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
-  text-decoration: none;
+  text-decoration: none;    
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5em;
+  background-color: var(--fundo-principal);
+}
+
+header {
+  background-color: var(--destaque);
+  padding: 5px 20px;
+}
+ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 30px; 
+  height: 100%;
+}
+.icons-navbar {
+  border-radius: 10px;
+  height: 100%;
+}
+.icons-navbar i  {
+  color: var(--texto-inverso);
+}
+.icons-navbar a {
+  border-radius: 5px;
+  padding: 5px;
+  
+}
+.icons-navbar :hover {
+  background-color: var(--destaque-inverso);
+}
+
+header, main {
+  margin-bottom: 15px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--fundo-card);
+  border-radius: 8px;
+  padding: 15px;
+}
+#perfil-guanabara img {
+  display: block;
+  margin: auto;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border: 5px solid var(--fundo-card);
+  outline: 5px solid var(--destaque);
+}
+.titulos-destaque {
+  color: var(--destaque);
+  font-size: 1.5em;
+}
+.textos {
+  color: var(--texto);
+  line-height: 1.5em;
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    display: grid;
-    grid-template-rows: 40px auto 150px;
-  }
-  header {
-    background-color: blue;
-    grid-row: 1 / 2;
-    display: flex;
-    flex-direction: row-reverse; 
-    align-items: center;
-    
-  }
-  .navbar-icons {
-    padding: 15px;
-    color: white;
-    height: 100%;
-  }
-  .navbar-icons:hover {
-   
-    transition: 0.7s;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.868);
-    color: blue;
-  }
   main {
-    grid-row: 2 / 3;
     display: grid;
-    grid-template: 20px 1fr 20px / 20px 1fr 20px;
-    grid-auto-rows: auto;
-    gap: 20px;
+    grid-template-columns: 1fr 90% 1fr;
   }
-  section { 
-    grid-column: 2 / 3;
+  section {
+    grid-column: 2;
   }
-  footer {
-    grid-row: 3 / 4;
-  }
-
-
-
-
-
-
-
-
 
 }
